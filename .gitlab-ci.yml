@@ -222,6 +222,12 @@ pup5.5.7-oel-fips:
   script:
     - 'BEAKER_fips=yes bundle exec rake beaker:suites[default,oel]'
 
+pup6-compliance:
+  <<: *pup_6
+  <<: *compliance_base
+  script:
+    - 'BEAKER_fips=yes bundle exec rake beaker:suites[compliance]'
+
 # pup5.5.7-compliance-fips:
 #   <<: *pup_5_5_7
 #   <<: *compliance_tests
